@@ -1,9 +1,9 @@
 ﻿<html>
 <head>
-<title>ADN Revit Plugin of The Month - Estorage</title>
+<title>ADN Revit Plugin of The Month - EstoreFile</title>
 </head>
 <body>
-<h1>Estorage for Revit</h1>
+<h1>EstoreFile for Revit</h1>
 
 <p>This add-in stores and manages the contents of external files in Revit extensible storage on selected elements in the BIM model.</p>
 
@@ -24,12 +24,12 @@
 
 <h2>Installation and Uninstallation</h2>
 
-<p>Copy the following files to the Revit 2012 or 2013 Addins folder "%AppData%\Autodesk\REVIT\Addins\2012" or "%AppData%\Autodesk\REVIT\Addins\2013":</p>
+<p>Copy the following files to the Revit 2014 Addins folder "%AppData%\Autodesk\REVIT\Addins\2014":</p>
 
 <ul>
-<li>AdnEstorage.addin: add-in manifest</li>
-<li>AdnEstorage.htm: help file</li>
-<li>AdnEstorage.dll: plugin assembly</li>
+<li>EstoreFile.addin: add-in manifest</li>
+<li>EstoreFile.htm: help file</li>
+<li>EstoreFile.dll: plugin assembly</li>
 </ul>
 
 <p>Note: you can also edit the .addin file to define a different location for the plugin DLL by including the full path to it.
@@ -58,7 +58,7 @@ add-in development and customisation:</p>
 <li>External application implementation: The external application implements a ribbon tab populating buttons for all commands in a loop handling each text, description, tooltip and small and large image identically.</li>
 <li>Embedded icon images: All ribbon button icons are embedded in the .NET executable assembly and stored in a separate folder, both on disk and within the Visual Studio project.</li>
 <li>Selection filter: a selection filter that only allows selection of BIM elements populated with relevant data.</li>
-<li>Runtime version check: even though compiled using the Revit 2012 API assemblies, Estorage still makes use of new Revit 2013 API features if they are present. It uses .NET Reflection to check at runtime for the presence of the Revit 2013 API ContxtualHelp class, call its constructor, and make use of a new on the PushButtonData class to set the contextual help for the add-in ribbon buttons. In that case, no command button is displayed for the help command.</li>
+<li>Runtime version check: even though compiled using the Revit 2012 API assemblies, EstoreFile still makes use of new Revit 2013 API features if they are present. It uses .NET Reflection to check at runtime for the presence of the Revit 2013 API ContxtualHelp class, call its constructor, and make use of a new on the PushButtonData class to set the contextual help for the add-in ribbon buttons. In that case, no command button is displayed for the help command.</li>
 <li>For the Remove command: Use of the pre-selected element set if it is not empty, and prompt for element selection otherwise. This enables selection of element types and othr objects that are not displayed graphically.</li>
 </ul>
 
@@ -91,11 +91,13 @@ They obviously also depend strongly on your personal usage and workflow requirem
 
 <h2>Version History</h2>
 
-<p>1.0 Original release</p>
+<p>1.0 Original release for Revit 2012 and Revit 2013</p>
+
+<p>2014.0.0.0 Migrated to Revit 2014</p>
 
 <h2>Copyright</h2>
 
-<p>(C) Copyright 2011-2012 by Autodesk, Inc. </p>
+<p>(C) Copyright 2011-2013 by Autodesk, Inc. </p>
 
 <p>Permission to use, copy, modify, and distribute this software in
 object code form for any purpose and without fee is hereby granted, 
