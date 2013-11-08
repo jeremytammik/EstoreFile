@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <!--
+  <AddIn Type="Command">
+    <Text>EStorage: Store File</Text>
+    <Description>Store a file in extensible storage on an element</Description>
+    <Assembly>AdnEstorage.dll</Assembly>
+    <FullClassName>AdnPlugin.Revit.EstoreFile.CmdStore</FullClassName>
+    <ClientId>bb0f9470-312e-451d-b93c-30ca710c4a32</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>EStorage: Restore File</Text>
+    <Description>Restore a file from extensible storage on an element</Description>
+    <Assembly>AdnEstorage.dll</Assembly>
+    <FullClassName>AdnPlugin.Revit.EstoreFile.CmdRestore</FullClassName>
+    <ClientId>71268ecc-5f09-404b-be30-e500e2882121</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>EStorage: List Stored Files</Text>
+    <Description>List all files stored in extensible storage in this document</Description>
+    <Assembly>AdnEstorage.dll</Assembly>
+    <FullClassName>AdnPlugin.Revit.EstoreFile.CmdList</FullClassName>
+    <ClientId>93e2ecbb-cba6-4f3e-af37-467ba27541cb</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>EStorage: Remove Stored Files</Text>
+    <Description>Remove stored files from selected elements</Description>
+    <Assembly>AdnEstorage.dll</Assembly>
+    <FullClassName>AdnPlugin.Revit.EstoreFile.CmdRemove</FullClassName>
+    <ClientId>d2e570a9-6e62-4661-b415-b5b323859342</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+  -->
+  <AddIn Type="Application">
+    <Name>EStorage</Name>
+    <Assembly>ADNPlugin-eStorage.bundle\AdnEstorage.dll</Assembly>
+    <FullClassName>AdnPlugin.Revit.EstoreFile.App</FullClassName>
+    <ClientId>c0973011-3a06-4480-b660-0fd0e02f3667</ClientId>
+    <VendorId>ADNP</VendorId>
+    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

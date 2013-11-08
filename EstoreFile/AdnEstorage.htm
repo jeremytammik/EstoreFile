@@ -1,0 +1,114 @@
+﻿<html>
+<head>
+<title>ADN Revit Plugin of The Month - Estorage</title>
+</head>
+<body>
+<h1>Estorage for Revit</h1>
+
+<p>This add-in stores and manages the contents of external files in Revit extensible storage on selected elements in the BIM model.</p>
+
+<h2>Getting Started</h2>
+
+<h3>Usage</h3>
+
+<p>This add-in provides the following commands:</p>
+
+<ul>
+<li><a name="1">Store</a>: Store the data of an external file into Revit extensible storage on a selected element. This command prompts you to select an external file and a Revit BIM element and stores the file data into Revit extensible storage.</li>
+<li><a name="2">StoreOnType</a>: Store the data of an external file into Revit extensible storage on the element type of a selected element. This command prompts you to select an external file and a Revit BIM element and stores the file data into the Revit extensible storage on the selected element's element type.</li>
+<li><a name="3">Restore</a>: Restore external file from extensible storage on a selected element. This command prompts you to select an element and retrieves the stored external file from its extensible storage.</li>
+<li><a name="4">List</a>: List file data stored in extensible storage. This command lists all the file file data stored in extensible storage on all elements in the current active document.</li>
+<li><a name="5">Remove</a>: Remove file data stored in extensible storage. This command prompts you to select one or more BIM elements and removes the file data stored in their extensible storage. If elements have already been selected prior to launching the command, they are used instead of prompting for a new selection. This can be used to remove stored file data from elements that are not selectable in the user interface, such as element types. They can be pre-selected using Manage &gt; Inquiry &gt; Select by ID instead.</li>
+<li><a name="6">Help</a>: Display the help file. This command displays the help file. It is only available in Revit 2012. In Revit 2013, you can hover over a command button and press the F1 key instead.</li>
+</ul>
+
+<h2>Installation and Uninstallation</h2>
+
+<p>Copy the following files to the Revit 2012 or 2013 Addins folder "%AppData%\Autodesk\REVIT\Addins\2012" or "%AppData%\Autodesk\REVIT\Addins\2013":</p>
+
+<ul>
+<li>AdnEstorage.addin: add-in manifest</li>
+<li>AdnEstorage.htm: help file</li>
+<li>AdnEstorage.dll: plugin assembly</li>
+</ul>
+
+<p>Note: you can also edit the .addin file to define a different location for the plugin DLL by including the full path to it.
+The help file must be in the same location as the plugin assembly.</p>
+
+<p>You will need to restart Revit for the plugin to be loaded.</p>  
+
+<h2>Uninstallation</h2>
+
+<p>Remove the files listed above from your system. 
+You may need to close Revit in order to do so.</p>
+
+
+<h2>Additional Information</h2>
+
+<p>This plugin was written by Jeremy Tammik and first presented at Autodesk University 2011.</p>
+
+<h3>Technical Features</h3>
+
+<p>Besides the basic handling of the file data and extensible storage functionality, 
+the following technical features may be of special interest to everybody involved in 
+add-in development and customisation:</p>
+
+<ul>
+<li>Support for both Revit 2012 and 2013 with the same add-in assembly.</li>
+<li>External application implementation: The external application implements a ribbon tab populating buttons for all commands in a loop handling each text, description, tooltip and small and large image identically.</li>
+<li>Embedded icon images: All ribbon button icons are embedded in the .NET executable assembly and stored in a separate folder, both on disk and within the Visual Studio project.</li>
+<li>Selection filter: a selection filter that only allows selection of BIM elements populated with relevant data.</li>
+<li>Runtime version check: even though compiled using the Revit 2012 API assemblies, Estorage still makes use of new Revit 2013 API features if they are present. It uses .NET Reflection to check at runtime for the presence of the Revit 2013 API ContxtualHelp class, call its constructor, and make use of a new on the PushButtonData class to set the contextual help for the add-in ribbon buttons. In that case, no command button is displayed for the help command.</li>
+<li>For the Remove command: Use of the pre-selected element set if it is not empty, and prompt for element selection otherwise. This enables selection of element types and othr objects that are not displayed graphically.</li>
+</ul>
+
+<h3>Known Issues</h3>
+
+<p>None</p>
+
+<h3>Enhancement Ideas</h3>
+
+<p>The following ideas for enhancements have been noted and can be easily implemented.
+They obviously complicate the code, some of them significantly, so they have been mitted in this initial version.
+They obviously also depend strongly on your personal usage and workflow requirements.</p>
+
+<ul>
+<li>For the List command: Implement a list view or grid to display the list of stored external file data with separate columns for the element td, type of element, name and path of the file attached to the element.</li>
+<li>For the List command: Display the results in a modeless form and allow selection and highlighting of the BIM element by double clicking on the corresponding row in the form. This functionality if already implemented and provided in other samples, such as the Modeless Loose Connector Navigator on The Building Coder blog and the String Search ADN Plugin of the Month.</li>
+<li>Store both the absolute path and the path relative to the project file in extensible storage, so that the external file can be restored in a similar relative location even if the project file is moved.</li>
+<li>Make use of a separate .NET resource DLL for all the language dependent prompt and message strings.</li>
+</ul>
+
+<h2>Contact</h2>
+
+<p>For more information on developing with Revit, please visit the 
+
+<a href="http://www.autodesk.com/developrevit">Revit Developer Center</a>.</p>
+
+<h3>Support Information</h3>
+
+<p>Email us at <a href="mailto:labs.plugins@autodesk.com">labs.plugins@autodesk.com</a> with feedback or requests for enhancements.</p>
+
+<h2>Version History</h2>
+
+<p>1.0 Original release</p>
+
+<h2>Copyright</h2>
+
+<p>(C) Copyright 2011-2012 by Autodesk, Inc. </p>
+
+<p>Permission to use, copy, modify, and distribute this software in
+object code form for any purpose and without fee is hereby granted, 
+provided that the above copyright notice appears in all copies and 
+that both that copyright notice and the limited warranty and
+restricted rights notice below appear in all supporting 
+documentation.</p>
+
+<p>AUTODESK PROVIDES THIS PROGRAM "AS IS" AND WITH ALL FAULTS. 
+AUTODESK SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTY OF
+MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE.  AUTODESK, INC. 
+DOES NOT WARRANT THAT THE OPERATION OF THE PROGRAM WILL BE
+UNINTERRUPTED OR ERROR FREE.</p>
+
+</body>
+</html>
