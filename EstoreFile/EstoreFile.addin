@@ -39,11 +39,11 @@
   </AddIn>
   -->
   <AddIn Type="Application">
-    <Name>EStorage</Name>
-    <Assembly>ADNPlugin-eStorage.bundle\AdnEstorage.dll</Assembly>
+    <Name>EstoreFile</Name>
+    <Assembly>EstoreFile.dll</Assembly>
     <FullClassName>AdnPlugin.Revit.EstoreFile.App</FullClassName>
-    <ClientId>c0973011-3a06-4480-b660-0fd0e02f3667</ClientId>
-    <VendorId>ADNP</VendorId>
-    <VendorDescription>Autodesk, Inc. www.autodesk.com</VendorDescription>
+    <ClientId>b58ad3ec-1180-4211-928c-6f7c387d87e7</ClientId>
+    <VendorId>TBC_</VendorId>
+    <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
   </AddIn>
 </RevitAddIns>

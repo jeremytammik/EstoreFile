@@ -39,7 +39,7 @@ namespace AdnPlugin.Revit.EstoreFile
 {
   class App : IExternalApplication
   {
-    const string _help_filename = "AdnEstorage.htm";
+    const string _help_filename = "EstoreFile.htm";
     static string _help_path = null;
 
     const string _name = Util.Caption;

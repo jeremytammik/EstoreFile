@@ -257,7 +257,7 @@ namespace AdnPlugin.Revit.EstoreFile
             ObjectType.Element,
             "Please pick an element to store the file on: " );
 
-          e = doc.get_Element( r.ElementId );
+          e = doc.GetElement( r.ElementId );
         }
         catch( RvtOperationCanceledException )
         {
@@ -278,7 +278,7 @@ namespace AdnPlugin.Revit.EstoreFile
           return Result.Failed;
         }
 
-        e = doc.get_Element( id );
+        e = doc.GetElement( id );
       }
 
       Transaction t = new Transaction( doc );
@@ -386,7 +386,7 @@ namespace AdnPlugin.Revit.EstoreFile
             ObjectType.Element,
             "Please pick an element to restore the file from: " );
 
-          e = doc.get_Element( r.ElementId );
+          e = doc.GetElement( r.ElementId );
         }
         catch( RvtOperationCanceledException )
         {
@@ -669,7 +669,7 @@ namespace AdnPlugin.Revit.EstoreFile
 
         foreach( Reference r in refs )
         {
-          e = doc.get_Element( r.ElementId );
+          e = doc.GetElement( r.ElementId );
 
           e.DeleteEntity( schema );
         }

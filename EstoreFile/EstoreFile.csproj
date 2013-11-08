@@ -1,6 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+      None
+    </ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+  </PropertyGroup>
+  <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>
@@ -11,7 +16,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AdnPlugin.Revit.EstoreFile</RootNamespace>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -32,6 +37,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -57,19 +63,19 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyName>AdnEstorage</AssemblyName>
+    <AssemblyName>EstoreFile</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="RevitAPI, Version=2012.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(ProgramFiles)\Autodesk\Revit Architecture 2012\Program\RevitAPI.dll</HintPath>
+      <HintPath>..\..\..\..\Program Files\Autodesk\Revit 2014\RevitAPI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RevitAPIUI, Version=2012.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(ProgramFiles)\Autodesk\Revit Architecture 2012\Program\RevitAPIUI.dll</HintPath>
+      <HintPath>..\..\..\..\Program Files\Autodesk\Revit 2014\RevitAPIUI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -78,6 +84,7 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="WindowsBase" />
@@ -89,7 +96,7 @@
     <Compile Include="Util.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ADNPlugin-eStorage.addin" />
+    <None Include="EstoreFile.addin" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -119,7 +126,7 @@
     <EmbeddedResource Include="Icon\Store32.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AdnEstorage.htm" />
+    <Content Include="EstoreFile.htm" />
     <EmbeddedResource Include="Icon\StoreOnType16.png" />
     <EmbeddedResource Include="Icon\StoreOnType32.png" />
     <EmbeddedResource Include="Icon\Help16.png" />
@@ -130,16 +137,10 @@
     <Delete Files="$(AppData)\Autodesk\REVIT\Addins\2012\EstoreFile.addin" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>copy "$(ProjectDir)AdnEstorage.htm" "$(ProjectDir)..\.." 
-copy "$(ProjectDir)AdnEstorage.htm" "$(ProjectDir)bin\Debug"
-copy "$(ProjectDir)AdnEstorage.htm" "$(AppData)\Autodesk\REVIT\Addins\2012\ADNPlugin-eStorage.bundle"
-copy "$(ProjectDir)AdnEstorage.htm" "$(AppData)\Autodesk\REVIT\Addins\2013\ADNPlugin-eStorage.bundle"
-copy "$(ProjectDir)ADNPlugin-eStorage.addin" "$(ProjectDir)..\..\.." 
-copy "$(ProjectDir)ADNPlugin-eStorage.addin" "$(AppData)\Autodesk\REVIT\Addins\2012"
-copy "$(ProjectDir)ADNPlugin-eStorage.addin" "$(AppData)\Autodesk\REVIT\Addins\2013"
-copy "$(ProjectDir)bin\Debug\AdnEstorage.dll" "$(ProjectDir)..\.." 
-copy "$(ProjectDir)bin\Debug\AdnEstorage.dll" "$(AppData)\Autodesk\REVIT\Addins\2012\ADNPlugin-eStorage.bundle"
-copy "$(ProjectDir)bin\Debug\AdnEstorage.dll" "$(AppData)\Autodesk\REVIT\Addins\2013\ADNPlugin-eStorage.bundle"
+    <PostBuildEvent>copy /y "$(ProjectDir)EstoreFile.htm" "$(ProjectDir)bin\Debug"
+copy /y "$(ProjectDir)EstoreFile.htm" "$(AppData)\Autodesk\REVIT\Addins\2014"
+copy /y "$(ProjectDir)EstoreFile.addin" "$(AppData)\Autodesk\REVIT\Addins\2014"
+copy /y "$(ProjectDir)bin\Debug\EstoreFile.dll" "$(AppData)\Autodesk\REVIT\Addins\2014"
 </PostBuildEvent>
   </PropertyGroup>
 </Project>
