@@ -210,7 +210,8 @@ namespace AdnPlugin.Revit.EstoreFile
 
       Selection sel = uidoc.Selection;
 
-      int n = sel.Elements.Size;
+      //int n = sel.Elements.Size; // 2014
+      int n = sel.GetElementIds().Count; // 2015
 
       if( 1 < n )
       {
@@ -244,9 +245,10 @@ namespace AdnPlugin.Revit.EstoreFile
         Debug.Assert( 1 == n,
           "we already checked for 1 < n above" );
 
-        foreach( Element e2 in sel.Elements )
+        //foreach( Element e2 in sel.Elements ) // 2014
+        foreach( ElementId id in sel.GetElementIds() ) // 2015
         {
-          e = e2;
+          e = doc.GetElement( id );
         }
       }
       else
@@ -347,7 +349,8 @@ namespace AdnPlugin.Revit.EstoreFile
 
       Selection sel = uidoc.Selection;
 
-      int n = sel.Elements.Size;
+      //int n = sel.Elements.Size; // 2014
+      int n = sel.GetElementIds().Count; // 2015
 
       if( 1 < n )
       {
@@ -373,9 +376,10 @@ namespace AdnPlugin.Revit.EstoreFile
         Debug.Assert( 1 == n,
           "we already checked for 1 < n above" );
 
-        foreach( Element e2 in sel.Elements )
+        //foreach( Element e2 in sel.Elements ) // 2014
+        foreach( ElementId id in sel.GetElementIds() ) // 2015
         {
-          e = e2;
+          e = doc.GetElement( id );
         }
       }
       else
@@ -618,14 +622,17 @@ namespace AdnPlugin.Revit.EstoreFile
 
       IList<Reference> refs;
 
-      int n = sel.Elements.Size;
+      //int n = sel.Elements.Size; // 2014
+      int n = sel.GetElementIds().Count; // 2015
 
       if( 0 < n )
       {
         refs = new List<Reference>( n );
 
-        foreach( Element e in sel.Elements )
+        //foreach( Element e2 in sel.Elements ) // 2014
+        foreach( ElementId id in sel.GetElementIds() ) // 2015
         {
+          Element e = doc.GetElement( id );
           refs.Add( new Reference( e ) );
         }
       }
