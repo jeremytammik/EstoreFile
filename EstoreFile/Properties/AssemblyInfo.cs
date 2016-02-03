@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration( "" )]
 [assembly: AssemblyCompany( "Autodesk Inc." )]
 [assembly: AssemblyProduct( "EstoreFile Revit Add-In" )]
-[assembly: AssemblyCopyright( "Copyright 2011-2013 © Jeremy Tammik Autodesk Inc." )]
+[assembly: AssemblyCopyright( "Copyright 2011-2016 © Jeremy Tammik Autodesk Inc." )]
 [assembly: AssemblyTrademark( "" )]
 [assembly: AssemblyCulture( "" )]
 
