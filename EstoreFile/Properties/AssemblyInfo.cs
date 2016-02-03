@@ -38,6 +38,8 @@ using System.Runtime.InteropServices;
 // 1.0.0.0 initial release 1.0.0.0 as published for Revit 2012 and 2013 on the Autodesk Exchange Appstore
 // 2014.0.0.0 2013-11-08 migrated to Revit 2014, renamed from Appstore names to EstoreFile for consistency
 // 2014.0.0.1 2013-11-08 minor typographical fixes in readme file and updated copyright years
+// 2015.0.0.0 2016-02-03 flat migration to Revit 2015
+// 2015.0.0.1 2016-02-03 eliminated obsolete API usage and unneeded .NET library assembly references
 //
-[assembly: AssemblyVersion( "2015.0.0.0" )]
-[assembly: AssemblyFileVersion( "2015.0.0.0" )]
+[assembly: AssemblyVersion( "2015.0.0.1" )]
+[assembly: AssemblyFileVersion( "2015.0.0.1" )]
