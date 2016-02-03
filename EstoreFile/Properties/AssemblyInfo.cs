@@ -32,5 +32,12 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion( "2014.0.0.1" )]
-[assembly: AssemblyFileVersion( "2014.0.0.1" )]
+//
+// History:
+//
+// 1.0.0.0 initial release 1.0.0.0 as published for Revit 2012 and 2013 on the Autodesk Exchange Appstore
+// 2014.0.0.0 2013-11-08 migrated to Revit 2014, renamed from Appstore names to EstoreFile for consistency
+// 2014.0.0.1 2013-11-08 minor typographical fixes in readme file and updated copyright years
+//
+[assembly: AssemblyVersion( "2015.0.0.0" )]
+[assembly: AssemblyFileVersion( "2015.0.0.0" )]
