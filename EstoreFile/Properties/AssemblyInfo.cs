@@ -40,6 +40,7 @@ using System.Runtime.InteropServices;
 // 2014.0.0.1 2013-11-08 minor typographical fixes in readme file and updated copyright years
 // 2015.0.0.0 2016-02-03 flat migration to Revit 2015
 // 2015.0.0.1 2016-02-03 eliminated obsolete API usage and unneeded .NET library assembly references
+// 2016.0.0.0 2016-02-03 flat migration to Revit 2016
 //
-[assembly: AssemblyVersion( "2015.0.0.1" )]
-[assembly: AssemblyFileVersion( "2015.0.0.1" )]
+[assembly: AssemblyVersion( "2016.0.0.0" )]
+[assembly: AssemblyFileVersion( "2016.0.0.0" )]
